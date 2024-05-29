@@ -1,41 +1,60 @@
 .container {
-  display: flex;
-  justify-content: space-around; /* 均匀分布间距 */
-  align-items: center;
   width: 100%;
-  height: 450px;
-}
-
-.state {
+  height: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(to right, #04182c, #000c17, #04182c);
 }
 
-.state img {
-  --s: 280px;
-  /* image size */
-  --b: 5px;
-  /* border thickness */
-  --c: #c02942;
-  /* border color */
-  --f: 1;
-  /* initial scale */
-
-  width: var(--s);
-  aspect-ratio: 1;
-  padding-top: calc(var(--s) / 5);
-  cursor: pointer;
-  border-radius: 0 0 calc(var(--s) / 2) calc(var(--s) / 2);
-  outline: var(--b) solid var(--c);
-  outline-offset: calc((1 / var(--f) - 1) * var(--s) / 2 - var(--b));
-  background: radial-gradient(circle closest-side, #ecd078 calc(99% - var(--b)), var(--c) calc(100% - var(--b)) 99%, #0000) 50% / calc(100% / var(--f)) 100% no-repeat content-box;
-  -webkit-mask: linear-gradient(#000 0 0) no-repeat 50% calc(-1 * ((1 / var(--f) - 1) * var(--s) / 2 - var(--b))) / calc(100% / var(--f) - 2 * var(--b)) 50%, radial-gradient(circle closest-side, #000 99%, #0000) 50% / calc(100% / var(--f)) 100% no-repeat content-box;
-  transform: scale(var(--f));
-  transition: 0.5s;
+.content {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: relative;
 }
 
-.state img:hover {
-  --f: 1.3;
-  /* hover scale */
+.content span {
+  width: 4px;
+  height: 20%;
+  border-radius: 8px; /* calc(80px * 0.2 * 0.5) */
+  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+  animation: loading 2.5s infinite linear;
+  margin-left: 4px;
+}
+
+.content .span0 { animation-delay: 0s; }
+.content .span1 { animation-delay: 0.2s; }
+.content .span2 { animation-delay: 0.4s; }
+.content .span3 { animation-delay: 0.6s; }
+.content .span4 { animation-delay: 0.8s; }
+.content .span5 { animation-delay: 1s; }
+.content .span6 { animation-delay: 1.2s; }
+.content .span7 { animation-delay: 1.4s; }
+.content .span8 { animation-delay: 1.6s; }
+.content .span9 { animation-delay: 1.8s; }
+.content .span10 { animation-delay: 2s; }
+.content .span11 { animation-delay: 2.2s; }
+.content .span12 { animation-delay: 2.4s; }
+.content .span13 { animation-delay: 2.6s; }
+.content .span14 { animation-delay: 2.8s; }
+
+@keyframes loading {
+  0% {
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    height: 20%;
+    border-radius: 8px; /* calc(80px * 0.2 * 0.5) */
+  }
+
+  50% {
+    background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+    height: 100%;
+    border-radius: 40px; /* calc(80px * 1 * 0.5) */
+  }
+
+  100% {
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    height: 20%;
+    border-radius: 8px; /* calc(80px * 0.2 * 0.5) */
+  }
 }
