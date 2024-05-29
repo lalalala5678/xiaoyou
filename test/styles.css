@@ -1,64 +1,67 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+}
 
-.newContainer {
+.button-container {
+  position: fixed;
+  top: 600px; /* 写死相对于顶部的距离 */
   width: 100%;
-  height: 450px;
+  display: flex;
+  justify-content: space-around; /* 均匀分布按钮 */
+  align-items: center;
+  padding: 0 20px; /* 确保按钮到左右边界的间距相等 */
+  box-sizing: border-box;
+}
+
+.styled-button {
+  width: 150px; /* 按钮宽度 */
+  height: 50px; /* 按钮高度 */
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.newBox {
-  width: 300px;
-  height: 300px;
+  font-size: 24px;
+  color: #fff; /* 按钮颜色 */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   position: relative;
-  animation: newRotate 4s linear infinite;
 }
 
-.newItem {
+.styled-button::before,
+.styled-button::after {
   box-sizing: border-box;
   position: absolute;
+  content: "";
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+.styled-button::before {
   top: 0;
   left: 0;
+}
+
+.styled-button::after {
+  bottom: 0;
+  right: 0;
+}
+
+.styled-button:hover::before {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  mask: radial-gradient(
-    transparent,
-    transparent calc(150px - 46px),
-    #000c17 calc(150px - 46px + 1px),
-    #000c17 100%
-  );
-  clip-path: polygon(
-    50% 0%, 
-    100% 0%, 
-    100% 100%, 
-    50% 100%, 
-    50% calc(50% - 1px), 
-    calc(50% + 1px) 50%, 
-    50% 50%
-  );
+  border-top-color: #fff; /* 按钮颜色 */
+  border-right-color: #fff; /* 按钮颜色 */
+  transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
 }
 
-.newSemicircle {
-  box-sizing: border-box;
-  position: absolute;
-  width: 23px;
-  height: 46px;
-  top: 0;
-  left: calc(50% - 23px / 2 + 1px);
-  border-top-left-radius: 23px;
-  border-bottom-left-radius: 23px;
-}
-
-.newBox:hover {
-  animation-play-state: paused;
-}
-
-@keyframes newRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
+.styled-button:hover::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-color: #fff; /* 按钮颜色 */
+  border-left-color: #fff; /* 按钮颜色 */
+  transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
 }
