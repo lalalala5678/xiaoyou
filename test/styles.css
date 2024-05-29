@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  justify-content: space-around; /* 均匀分布间距 */
+  align-items: center;
+  width: 100%;
+  height: 450px;
+}
+
+.state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.state img {
+  --s: 280px;
+  /* image size */
+  --b: 5px;
+  /* border thickness */
+  --c: #c02942;
+  /* border color */
+  --f: 1;
+  /* initial scale */
+
+  width: var(--s);
+  aspect-ratio: 1;
+  padding-top: calc(var(--s) / 5);
+  cursor: pointer;
+  border-radius: 0 0 calc(var(--s) / 2) calc(var(--s) / 2);
+  outline: var(--b) solid var(--c);
+  outline-offset: calc((1 / var(--f) - 1) * var(--s) / 2 - var(--b));
+  background: radial-gradient(circle closest-side, #ecd078 calc(99% - var(--b)), var(--c) calc(100% - var(--b)) 99%, #0000) 50% / calc(100% / var(--f)) 100% no-repeat content-box;
+  -webkit-mask: linear-gradient(#000 0 0) no-repeat 50% calc(-1 * ((1 / var(--f) - 1) * var(--s) / 2 - var(--b))) / calc(100% / var(--f) - 2 * var(--b)) 50%, radial-gradient(circle closest-side, #000 99%, #0000) 50% / calc(100% / var(--f)) 100% no-repeat content-box;
+  transform: scale(var(--f));
+  transition: 0.5s;
+}
+
+.state img:hover {
+  --f: 1.3;
+  /* hover scale */
+}

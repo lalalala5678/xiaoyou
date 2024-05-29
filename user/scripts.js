@@ -6,4 +6,7 @@ function onceAgain() {
       span.style.animation = '';
     });
   }
-  
+  document.addEventListener('DOMContentLoaded', () => {
+  const cartoonFigure = document.getElementById('cartoonFigure');
+  cartoonFigure.src = './laugh.png';
+});
