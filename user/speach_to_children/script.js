@@ -6,7 +6,7 @@ document.getElementById('submitBtn').addEventListener('click', function() {
       return;
   }
   
-  fetch('your-backend-endpoint', {
+  fetch('http://localhost:3000/submit', { // 修改为你的后端URL
       method: 'POST',
       headers: {
           'Content-Type': 'application/json'
