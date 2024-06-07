@@ -1,29 +1,47 @@
-.glassDesign1 {
-    width: 100%;
-    height: 900px;
-    position: relative;
-  }
-  
-  .glassDesign1 img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    transition: transform 0.8s;
-    z-index: 1;
-  }
-  
-  .glassDesign1 .glass {
-    position: absolute;
-    width: 1000px;
-    height: 1000px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 2;
-  }
-  
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(
+                  rgba(4, 24, 44, 0.7),
+                  rgba(0, 12, 23, 0.7)
+              ), 
+              url('./love.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5em;
+  color: white;
+  margin-bottom: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.echart {
+  width: 80%;
+  height: 60vh;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.today-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1em;
+  z-index: 2;
+}

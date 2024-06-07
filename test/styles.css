@@ -1,67 +1,50 @@
-body, html {
+body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: #000;
-}
-
-.button-container {
-  position: fixed;
-  top: 600px; /* 写死相对于顶部的距离 */
-  width: 100%;
   display: flex;
-  justify-content: space-around; /* 均匀分布按钮 */
   align-items: center;
-  padding: 0 20px; /* 确保按钮到左右边界的间距相等 */
-  box-sizing: border-box;
-}
-
-.styled-button {
-  width: 150px; /* 按钮宽度 */
-  height: 50px; /* 按钮高度 */
-  display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #fff; /* 按钮颜色 */
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+  min-height: 100vh;
+  background: linear-gradient(
+                  rgba(4, 24, 44, 0.7),
+                  rgba(0, 12, 23, 0.7)
+              ), 
+              url('背景图片路径') no-repeat center center fixed;
+  background-size: cover;
   position: relative;
 }
 
-.styled-button::before,
-.styled-button::after {
-  box-sizing: border-box;
+.book-background {
   position: absolute;
-  content: "";
-  border: 2px solid transparent;
-  width: 0;
-  height: 0;
-}
-
-.styled-button::before {
   top: 0;
   left: 0;
-}
-
-.styled-button::after {
-  bottom: 0;
-  right: 0;
-}
-
-.styled-button:hover::before {
   width: 100%;
   height: 100%;
-  border-top-color: #fff; /* 按钮颜色 */
-  border-right-color: #fff; /* 按钮颜色 */
-  transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
-.styled-button:hover::after {
+#flipbook {
+  width: 800px;
+  height: 600px;
+  z-index: 1;
+  position: relative;
+}
+
+.page {
   width: 100%;
   height: 100%;
-  border-bottom-color: #fff; /* 按钮颜色 */
-  border-left-color: #fff; /* 按钮颜色 */
-  transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: black;
+  font-size: 1.2em;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.page:nth-child(even) {
+  background: #f0f0f0;
 }

@@ -2,9 +2,35 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #000;
+  background-color: rgb(193, 193, 193);
+}
+p {
+  background: linear-gradient(135deg, #ffffcc, #ffff66);
+  background-size: 200% 200%;
+  animation: gradientAnimation 2.5s ease infinite;
+  color: black;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  font-weight: bold; /* 设置字体加粗 */
 }
 
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
 video {
   position: relative;
 }
@@ -33,19 +59,20 @@ video {
   z-index: 2;
   margin: 0;
   padding: 20px 0;
-  color: #ddd;
+  color: #99cccc;
   font-size: 80px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-align: center;
+  font-weight: bold;
 }
 
 .span1 {
   opacity: 0;
   display: inline-block;
   animation: textAnimation1 1s linear forwards;
-  color: cyan;
-  font-family: STXingkai;
+  color: #99cccc;
+  font-family: '幼圆', 'YouYuan', sans-serif;
 }
 
 .span1:nth-child(1) {
@@ -283,12 +310,7 @@ video {
     transform: rotate(-360deg);
   }
 }
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #000;
-}
+
 
 .button-container {
   position: fixed;
@@ -310,11 +332,13 @@ body, html {
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  color: #fff; /* 按钮颜色 */
+  color: #336699; /* 按钮颜色 */
   background-color: transparent;
   border: none;
   cursor: pointer;
   position: relative;
+
+  font-size: 2em;
 }
 
 .styled-button::before,
@@ -340,15 +364,15 @@ body, html {
 .styled-button:hover::before {
   width: 100%;
   height: 100%;
-  border-top-color: #fff; /* 按钮颜色 */
-  border-right-color: #fff; /* 按钮颜色 */
+  border-top-color: #336699; /* 按钮颜色 */
+  border-right-color: #336699; /* 按钮颜色 */
   transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
 }
 
 .styled-button:hover::after {
   width: 100%;
   height: 100%;
-  border-bottom-color: #fff; /* 按钮颜色 */
-  border-left-color: #fff; /* 按钮颜色 */
+  border-bottom-color: #336699; /* 按钮颜色 */
+  border-left-color: #336699; /* 按钮颜色 */
   transition: width 0.2s ease-out, height 0.2s ease-out 0.2s;
 }

@@ -1,36 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glass Design</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留守儿童精神状态翻书</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./turn.js/turn.min.js"></script>
 </head>
 <body>
-  <div class="glassDesign1">
-    <img id="financialTechnology" src="love.jpg" alt="love">
-    <div class="glass"></div>
-    <svg style="display: none;">
-      <defs>
-        <filter id="glassFilter1">
-          <feImage
-            result="pict1"
-            xlink:href="glass1.jpg"
-            x="0"
-            y="0"
-
-          ></feImage>
-          <feDisplacementMap
-            scale="30"
-            xChannelSelector="R"
-            yChannelSelector="R"
-            in2="pict1"
-            in="SourceGraphic"
-          ></feDisplacementMap>
-        </filter>
-      </defs>
-    </svg>
-  </div>
-  <script src="script.js"></script>
+    <h1 class="book-title">心声记录</h1>
+    <div class="book-background"></div>
+    <div id="flipbook">
+        <div class="page"><p id="page1">第一天：今天感觉有点孤单...</p></div>
+        <div class="page"><p id="page2">第二天：今天和小伙伴玩得很开心...</p></div>
+        <div class="page"><p id="page3">第三天：有点想家...</p></div>
+        <div class="page"><p id="page4">第四天：今天收到了家人的来信...</p></div>
+        <div class="page"><p id="page5">第五天：在学校表现很好，老师表扬了我...</p></div>
+    </div>
+    <div class="controls">
+        <button id="prev">上一页</button>
+        <button id="next">下一页</button>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>
