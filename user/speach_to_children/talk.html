@@ -1,36 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glass Design</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>言所欲言</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="glassDesign1">
-    <img id="financialTechnology" src="love.jpg" alt="love">
-    <div class="glass"></div>
-    <svg style="display: none;">
-      <defs>
-        <filter id="glassFilter1">
-          <feImage
-            result="pict1"
-            xlink:href="glass1.jpg"
-            x="0"
-            y="0"
-
-          ></feImage>
-          <feDisplacementMap
-            scale="30"
-            xChannelSelector="R"
-            yChannelSelector="R"
-            in2="pict1"
-            in="SourceGraphic"
-          ></feDisplacementMap>
-        </filter>
-      </defs>
-    </svg>
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <header>
+            <h1>言所欲言</h1>
+        </header>
+        <main>
+            <textarea id="userInput" placeholder="在这里输入文字，下次孩子和小邮同学对话时，小邮同学会以自己的口吻告诉孩子"></textarea>
+            <button id="submitBtn">提交</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
